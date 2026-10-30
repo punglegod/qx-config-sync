@@ -162,6 +162,7 @@ rewrite_remote:
   - "https://kelee.one/Tool/Loon/Lpx/Cainiao_remove_ads.lpx, tag=菜鸟去广告, enabled=true, opt-parser=true"
   - "https://kelee.one/Tool/Loon/Lpx/MojiWeather_remove_ads.lpx, tag=墨迹天气去广告, enabled=true, opt-parser=true"
   - "https://kelee.one/Tool/Loon/Lpx/Weixin_Official_Accounts_remove_ads.lpx, tag=微信公众号去广告, enabled=true, opt-parser=true"
+  - "https://kelee.one/Tool/Loon/Lpx/AppleWeatherEnhancer.lpx, tag=苹果天气增强, enabled=true, opt-parser=true"
 
 # ------------------------------------------------------------------------------
 # [其他] 定时任务 (Task Local) - 暂无
