@@ -18,4 +18,5 @@
 
 ## 已知取舍
 
+- **kelee 五件套改走 GitHub 镜像（2026-10-30）**：源站 kelee.one 当前不可达（多方网络均无法连接，QX 里显示「无法连接服务器」），苹果天气增强、贴吧、菜鸟、墨迹天气、微信公众号五个插件在 config.yaml 里已改为 GitHub 镜像地址（zmjde/loon-plugins 与 mihoyo-typ/KeleeOne，已逐个核对为原文件）。kelee.one 恢复后可换回官方地址。
 - 网易云去广告：底包自带 ddgksf2013 版，本配置没有叠加 ios151 版的 rewrite 部分（两套同开会冲突），只并入了它的 filter 拦截和 MITM 域名。如需切换到 ios151 版，需先 patch 掉底包那条。
