@@ -111,6 +111,10 @@ local_filters:
     - "host-suffix, checkout.steampowered.com, 手动选择"
     - "host-suffix, steamcommunity.com, 手动选择"
     - "host-suffix, steamstatic.com, 手动选择"
+    # 苹果天气统计上报拦截
+    - "host, weather-analytics-events.apple.com, reject"
+    - "host, tether.edge.apple, reject"
+    - "host-suffix, tthr.apple.com, reject"
     # 网易云音乐广告域名拦截 (ios151/NeteasemusicAd 的 filter 部分)
     - "host, iadmusicmat.music.126.net, reject"
     - "host, iadmat.nosdn.127.net, reject"
@@ -152,6 +156,9 @@ filter_remote:
 # ------------------------------------------------------------------------------
 rewrite_local:
   - "file://rules/my_rewrites.list"
+  # 苹果天气增强 QX 原生写法 (原 .lpx 为 Surge DSL 格式, QX 解析器无法转换)
+  - "^https?://weatherkit\\.apple\\.com/api/v1/availability/ url script-response-body https://github.com/NSRingo/WeatherKit/releases/download/v3.1.0/response.bundle.js"
+  - "^https?://weatherkit\\.apple\\.com/api/v2/weather/ url script-response-body https://github.com/NSRingo/WeatherKit/releases/download/v3.1.0/response.bundle.js"
 
 # ------------------------------------------------------------------------------
 # [引用] 远程重写 (Rewrite Remote) - 只保留去广告
@@ -162,11 +169,7 @@ rewrite_local:
 rewrite_remote:
   - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/QuantumultX/Advertising/Advertising.conf, tag=综合去广告@blackmatrix7, enabled=true"
   - "https://limbopro.com/Adblock4limbo.conf, tag=毒奶特供(去网页广告计划), enabled=true"
-  - "https://raw.githubusercontent.com/zmjde/loon-plugins/main/Plugin/Tieba_remove_ads.lpx, tag=贴吧去广告, enabled=true, opt-parser=true"
-  - "https://raw.githubusercontent.com/zmjde/loon-plugins/main/Plugin/Cainiao_remove_ads.lpx, tag=菜鸟去广告, enabled=true, opt-parser=true"
   - "https://raw.githubusercontent.com/mihoyo-typ/KeleeOne/Loon/Plugin/MojiWeather_remove_ads.lpx, tag=墨迹天气去广告, enabled=true, opt-parser=true"
-  - "https://raw.githubusercontent.com/zmjde/loon-plugins/main/Plugin/Weixin_Official_Accounts_remove_ads.lpx, tag=微信公众号去广告, enabled=true, opt-parser=true"
-  - "https://raw.githubusercontent.com/zmjde/loon-plugins/main/Plugin/AppleWeatherEnhancer.lpx, tag=苹果天气增强, enabled=true, opt-parser=true"
 
 # ------------------------------------------------------------------------------
 # [其他] 定时任务 (Task Local) - 暂无

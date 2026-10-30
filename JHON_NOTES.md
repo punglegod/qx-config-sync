@@ -18,5 +18,5 @@
 
 ## 已知取舍
 
-- **kelee 五件套改走 GitHub 镜像（2026-10-30）**：源站 kelee.one 当前不可达（多方网络均无法连接，QX 里显示「无法连接服务器」），苹果天气增强、贴吧、菜鸟、墨迹天气、微信公众号五个插件在 config.yaml 里已改为 GitHub 镜像地址（zmjde/loon-plugins 与 mihoyo-typ/KeleeOne，已逐个核对为原文件）。kelee.one 恢复后可换回官方地址。
+- **kelee 插件与 QX 的格式墙（2026-10-30 实测）**：kelee.one 源站不可达只是第一关；其分发的贴吧/菜鸟/微信公众号/苹果天气增强用的是 Surge/Loon 的 DSL 语法（`response if ${url} ~= ...`），QX 的资源解析器无法转换，导入后显示「内容无效」。处理：苹果天气增强已手工转成 QX 原生写法（2 条 script-response-body 在 rewrite_local + 3 条统计域名 reject，脚本为 NSRingo WeatherKit 官方 bundle，默认数据源/AQI 算法）；贴吧/菜鸟/微信公众号三件套已移除（需要时另找 QX 原生版本）。墨迹天气（经典 [Rewrite] 格式）解析正常，保留 mihoyo-typ/KeleeOne 镜像源。
 - 网易云去广告：底包自带 ddgksf2013 版，本配置没有叠加 ios151 版的 rewrite 部分（两套同开会冲突），只并入了它的 filter 拦截和 MITM 域名。如需切换到 ios151 版，需先 patch 掉底包那条。
