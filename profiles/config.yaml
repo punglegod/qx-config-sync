@@ -29,6 +29,10 @@ patches:
     keywords: ["no-ipv6"]
   filter_local:
     keywords: ["github"]
+  # 底包自带一条陌生人的免费公开订阅 (Ruk1ng001 freeSub), 整段删掉:
+  # 避免不明节点混进自动选择/手动选择组
+  server_remote:
+    keywords: ["Ruk1ng001", "freeSub"]
 
 # ------------------------------------------------------------------------------
 # [通用] 全局设置 (General)

@@ -7,6 +7,7 @@
 - **只保留去广告**：suversal 的 TikTok / Gemini / Binance 分流已移除（尤其 Binance 他走香港节点，与本人「交易所只走台湾」的原则冲突）；Sub-Store、PluginHub 等工具类重写已移除。
 - **去广告阵容**：底包 ddgksf2013 自带（B站、开屏、彩云天气、知乎、YouTube、微博、高德、网易云、闲鱼、小红书等）+ 毒奶网页去广告 + kelee 的贴吧/菜鸟/墨迹天气/微信公众号 + blackmatrix7 补充（Advertising 综合拦截、ZhihuAds、防劫持 Hijacking、EasyPrivacy 隐私追踪拦截、BlockHttpDNS、分流与重写双份）。
 - **自己的策略组**：交易所（只走台湾，默认自有 TW-GCP）、Ai（默认家宽 Home-JP）、Telegram，外加底包兼容组（苹果服务/全球加速/国际媒体等，底包分流规则要用）。自有节点靠名字识别：TW-GCP→台湾组、Home-JP→日本组、俄勒冈-free-vm→美国组。
+- **底包清洗**：ddgksf2013 底包自带一条陌生人的免费公开订阅（Ruk1ng001 freeSub），已用 patches 按关键词整段删除，避免不明节点混进自动选择/手动选择组。
 - **自己的分流规则**：交易所五家域名→交易所；x.ai / stripe.com / challenges.cloudflare.com→俄勒冈节点（Grok 付费链路避开慢速家宽）；Steam 登录下载直连、商店走手动选择；网易云广告域名 reject + MITM 域名（源自 ios151/NeteasemusicAd）。
 - **额外加的一个功能增强**：苹果天气增强（kelee 版，解锁 Apple 天气功能、补下一小时降水、换 AQI 数据源；非去广告，应本人要求加入；MITM 域名 weatherkit.apple.com 已并入 jhon_mitm_hosts.list）。
 
